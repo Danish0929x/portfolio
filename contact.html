@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" href="./images/ficon.PNG" type="image/x-icon">
+
+
+    <title>Reach me!</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="./index.html">M</a>
+        </div>
+        <div class="nav-links">
+            <div class="menu-lines">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="links">
+        <a class="item" href="./index.html">
+            <i class="fa fa-home"></i> Home
+        </a>
+        <a class="item" href="./about.html">
+            <i class="fa fa-user"></i> About
+        </a>
+        <a class="item" href="./contact.html">
+            <i class="fa fa-envelope"></i> Contact
+        </a>
+
+    </div>
+
+    <div class="contact-form">
+        <h2>Contact me</h2>
+        <h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</h3>
+
+        <form onsubmit="sendEmail(); reset(); return false;" class="contact">
+            <input type="text" id="name" placeholder="Full name" required>
+            <input type="email" id="email" placeholder="Email address" required>
+            <input type="text" id="number" placeholder="Mobile" required>
+            <textarea type="text" id="message" placeholder="How can I help you!" rows="4" required></textarea>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+
+    </div>
+
+
+
+    <div class="footer">
+        <div class="social-links-wrapper">
+            <a href="https://www.instagram.com/_mdmouzzamdanish/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/mouzzam-danish/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/Danish0929x"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="caption">Copyright © 2023 Mohammed Mouzzam. All rights reserved.</div>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendEmail() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let number = document.getElementById('number').value;
+            let msg = document.getElementById('message').value;
+
+            console.log("started")
+            console.log(name, email, number, msg)
+                Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "mouzzamdanishh@gmail.com",
+                Password: "74F1448C759A11BFDA748CB75D65CBFBA450",
+                To: 'mohammedmouzzam@alchemial.com',
+                From: "mouzzamdanishh@gmail.com",
+                Subject: name,
+                Body: `name: ${name}, Number : ${number} email: ${email} message: ${msg}`
+            }).then(
+                message => alert(message)
+            );
+        }
+
+    </script>
+
+
+
+    <script src="https://kit.fontawesome.com/e48d166edc.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
